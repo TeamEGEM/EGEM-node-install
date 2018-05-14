@@ -25,6 +25,10 @@ echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc
 echo "export GOROOT=/usr/local/go"
 source ~/.bashrc
 
+echo "Installing node and pm2"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs && sudo npm install -g pm2
+
 echo "Cloning go-egem Repo"
 sleep 5
 git clone https://github.com/TeamEGEM/go-egem.git
@@ -61,8 +65,7 @@ echo "A more efficient way will eventually be implemented"
 
 sleep 300
 
-cd ~/egem-net-intelligence-api
-apt-get install npm -y && sudo npm install -g pm2 && npm install && ln -s /usr/bin/nodejs /usr/bin/node
+cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
 
 echo "Done your node should be listed on https://network.egem.io"
