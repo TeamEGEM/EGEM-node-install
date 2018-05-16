@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #source setup.sh; step1
-function step1()
-{
 echo "Updating linux packages"
 echo "If prompted about Grub Configuration select keep the local version currently installed"
 sleep 10
@@ -39,12 +37,9 @@ git clone https://github.com/TeamEGEM/egem-net-intelligence-api.git
 
 echo "Step 1 complete."
 echo "Run the following command to complete installation: source setup.sh; step2"
-}
 
 #source setup.sh; step2
-function step2()
-{
-        cd ~/go-egem && make egem
+cd ~/go-egem && make egem
 cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
 echo -n "What woud you like to name your instance? (Example: TeamEGEM Node East Coast USA)"
@@ -69,5 +64,4 @@ cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
 
 echo "Done your node should be listed on https://network.egem.io"
-}
 
