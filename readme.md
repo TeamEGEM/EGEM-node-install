@@ -26,3 +26,11 @@ If all went well when you visit the page you should see your newly created node 
 
 *** Note after setup if you notice that your node is red it could be due to not being fully sysnced with the current block height. Give it a few min to catch up and you should be good to go.
 If you have any trouble feel free to ask for help on the Official Egem discord. 
+
+To update go-egem
+```
+cd go-egem
+make clean
+git pull
+make all
+```
