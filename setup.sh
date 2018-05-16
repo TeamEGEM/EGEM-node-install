@@ -35,9 +35,6 @@ echo "Cloning EGEM Net-Intelligence"
 sleep 5
 git clone https://github.com/TeamEGEM/egem-net-intelligence-api.git
 
-echo "Step 1 complete."
-echo "Run the following command to complete installation: source setup.sh; step2"
-
 #source setup.sh; step2
 sleep 5
 cd ~/go-egem && make egem
