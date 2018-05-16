@@ -80,5 +80,11 @@ cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
 
 echo "Done your node should be listed on https://network.egem.io"
-echo "#triforce"
+echo '
+
+    _  _   _        _  __                    
+  _| || |_| |_ _ __(_)/ _| ___  _ __ ___ ___ 
+ |_  ..  _| __| '__| | |_ / _ \| '__/ __/ _ \
+ |_      _| |_| |  | |  _| (_) | | | (_|  __/
+   |_||_|  \__|_|  |_|_|  \___/|_|  \___\___|'                                         
 
