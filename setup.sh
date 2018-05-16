@@ -39,6 +39,7 @@ echo "Step 1 complete."
 echo "Run the following command to complete installation: source setup.sh; step2"
 
 #source setup.sh; step2
+sleep 5
 cd ~/go-egem && make egem
 cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
