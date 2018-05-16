@@ -1,6 +1,5 @@
 This script is to install a Ethergem node on your own vps.
-It has been testing on a $5 Linode VPS.
-A video of how to use this script can be found at [youtube](https://youtu.be/vLSzmF758Kk)
+It has been testing on a $5 Vultr VPS. https://www.vultr.com/?ref=7307426
 
 Requirements
 
