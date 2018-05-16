@@ -16,13 +16,7 @@ echo "Installing git"
 apt install git -y
 
 echo "Install go-lang"
-wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
-mkdir -p ~/go; echo "export GOPATH=$HOME/go" >> ~/.bashrc
-echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc 
-source ~/.bashrc
-echo "export && GOROOT=/usr/local/go"
-echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
+wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz && mkdir -p ~/go; echo "export && GOPATH=$HOME/go" >> ~/.bashrc && echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc && echo "export && GOROOT=/usr/local/go" && echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
 
 echo "Cloning go-egem Repo"
 git clone https://github.com/TeamEGEM/go-egem.git
