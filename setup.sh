@@ -25,7 +25,6 @@ echo "export && GOROOT=/usr/local/go"
 echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
 
 echo "Cloning go-egem Repo"
-sleep 5
 git clone https://github.com/TeamEGEM/go-egem.git
 cd go-egem && make egem
 cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
@@ -36,7 +35,6 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs && sudo npm install -g pm2
 
 echo "Cloning EGEM Net-Intelligence"
-sleep 5
 git clone https://github.com/TeamEGEM/egem-net-intelligence-api.git
 
 #source setup.sh; step2
@@ -57,7 +55,6 @@ echo "This is the tricky part need to wait for chain to sync b4 connecting to th
 echo "Go get some food and come back in 5 min"
 echo "A more efficient way will eventually be implemented"
 
-sleep 300
 
 cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
