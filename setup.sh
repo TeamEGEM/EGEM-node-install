@@ -89,7 +89,7 @@ sed "s/'/\"/g" ~/egem-net-intelligence-api/app.json
 echo "This is the tricky part need to wait for chain to sync b4 connecting to the the network page"
 echo "Go get some food and come back in 5 min"
 echo "A more efficient way will eventually be implemented"
-
+sleep 500
 
 cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
@@ -100,4 +100,6 @@ echo '
 /\__  _\ /\  == \   /\ \   /\  ___\ /\  __ \   /\  == \   /\  ___\   /\  ___\   
 \/_/\ \/ \ \  __<   \ \ \  \ \  __\ \ \ \/\ \  \ \  __<   \ \ \____  \ \  __\   
    \ \_\  \ \_\ \_\  \ \_\  \ \_\    \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\ 
-    \/_/   \/_/ /_/   \/_/   \/_/     \/_____/   \/_/ /_/   \/_____/   \/_____/ '
+    \/_/   \/_/ /_/   \/_/   \/_/     \/_____/   \/_/ /_/   \/_____/   \/_____/ 
+    
+    '
