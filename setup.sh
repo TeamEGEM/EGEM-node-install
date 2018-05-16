@@ -24,22 +24,21 @@ source ~/.bashrc
 echo "export && GOROOT=/usr/local/go"
 echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
 
-echo "Installing node and pm2"
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs && sudo npm install -g pm2
-
 echo "Cloning go-egem Repo"
 sleep 5
 git clone https://github.com/TeamEGEM/go-egem.git
+cd go-egem && make egem
+cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
+
+echo "Installing node and pm2"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs && sudo npm install -g pm2
 
 echo "Cloning EGEM Net-Intelligence"
 sleep 5
 git clone https://github.com/TeamEGEM/egem-net-intelligence-api.git
 
 #source setup.sh; step2
-sleep 5
-cd ~/go-egem && make egem
-cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
 echo -n "What woud you like to name your instance? (Example: TeamEGEM Node East Coast USA)"
 read INSTANCE_NAME
