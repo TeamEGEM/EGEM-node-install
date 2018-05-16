@@ -21,6 +21,7 @@ tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 mkdir -p ~/go; echo "export GOPATH=$HOME/go" >> ~/.bashrc
 echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc 
 echo "export GOROOT=/usr/local/go"
+echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
 source ~/.bashrc
 
 echo "Installing node and pm2"
