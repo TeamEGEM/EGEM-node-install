@@ -41,7 +41,7 @@ echo "Installing git"
 apt install git -y
 
 echo "Install go-lang"
-sudo apt-get install golang-1.10
+sudo apt-get install golang-1.10 -y
 sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
 
 echo "Clone and Compile Go-Egem"
