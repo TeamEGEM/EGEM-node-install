@@ -40,6 +40,21 @@ apt install screen
 echo "Installing git"
 apt install git -y
 
+echo "Intalling fail2ban"
+sudo apt install fail2ban
+
+echo "Installing Firewall"
+sudo apt install ufw -y
+ufw default allow outgoing
+ufw default deny incoming
+ufw allow ssh/tcp
+ufw limit ssh/tcp
+ufw allow 8545/tcp
+ufw allow 30666/tcp
+ufw allow 30661/tcp
+ufw logging on
+ufw --force enable
+
 echo "Install go-lang"
 sudo apt-get install golang-1.10 -y
 sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
