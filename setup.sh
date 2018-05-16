@@ -15,9 +15,13 @@ apt install screen
 echo "Installing git"
 apt install git -y
 
-echo "Install go-lang and Clone Go-Egem"
-wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz && mkdir -p ~/go; echo "export && GOPATH=$HOME/go" >> ~/.bashrc && echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc && echo "export && GOROOT=/usr/local/go" && echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" && git clone https://github.com/TeamEGEM/go-egem.git && cd go-egem && make egem
+echo "Install go-lang"
+sudo apt-get install golang-1.10
+sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
 
+echo "Clone and Compile Go-Egem"
+git clone https://github.com/TeamEGEM/go-egem.git
+cd go-egem && make egem
 cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
 echo "Installing node and pm2"
