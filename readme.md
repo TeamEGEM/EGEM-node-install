@@ -6,7 +6,14 @@ Requirements
 
 Ubuntu 16.04 LTS
 
+Install without Swap
+```
 bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
+```
+Install with Swap
+```
+bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/createswap.sh)" && bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
+```
 
 During the process you will be promted to type in some details for your node.
 
