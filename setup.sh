@@ -1,8 +1,31 @@
 #!/bin/bash
 
+echo '
+      ___           ___           ___           ___     
+     /\__\         /\__\         /\__\         /\  \    
+    /:/ _/_       /:/ _/_       /:/ _/_       |::\  \   
+   /:/ /\__\     /:/ /\  \     /:/ /\__\      |:|:\  \  
+  /:/ /:/ _/_   /:/ /::\  \   /:/ /:/ _/_   __|:|\:\  \ 
+ /:/_/:/ /\__\ /:/__\/\:\__\ /:/_/:/ /\__\ /::::|_\:\__\
+ \:\/:/ /:/  / \:\  \ /:/  / \:\/:/ /:/  / \:\~~\  \/__/
+  \::/_/:/  /   \:\  /:/  /   \::/_/:/  /   \:\  \      
+   \:\/:/  /     \:\/:/  /     \:\/:/  /     \:\  \     
+    \::/  /       \::/  /       \::/  /       \:\__\    
+     \/__/         \/__/         \/__/         \/__/    
+      ___           ___                         ___     
+     /\  \         /\  \         _____         /\__\    
+     \:\  \       /::\  \       /::\  \       /:/ _/_   
+      \:\  \     /:/\:\  \     /:/\:\  \     /:/ /\__\  
+  _____\:\  \   /:/  \:\  \   /:/  \:\__\   /:/ /:/ _/_ 
+ /::::::::\__\ /:/__/ \:\__\ /:/__/ \:|__| /:/_/:/ /\__\
+ \:\~~\~~\/__/ \:\  \ /:/  / \:\  \ /:/  / \:\/:/ /:/  /
+  \:\  \        \:\  /:/  /   \:\  /:/  /   \::/_/:/  / 
+   \:\  \        \:\/:/  /     \:\/:/  /     \:\/:/  /  
+    \:\__\        \::/  /       \::/  /       \::/  /   
+     \/__/         \/__/         \/__/         \/__/    '
+
+
 #source setup.sh; step1
-function step1()
-{
 echo "Updating linux packages"
 echo "If prompted about Grub Configuration select keep the local version currently installed"
 sleep 10
@@ -18,34 +41,23 @@ echo "Installing git"
 apt install git -y
 
 echo "Install go-lang"
-wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
-mkdir -p ~/go; echo "export GOPATH=$HOME/go" >> ~/.bashrc
-echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc 
-echo "export GOROOT=/usr/local/go"
-source ~/.bashrc
+sudo apt-get install golang-1.10 -y
+sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
+
+echo "Clone and Compile Go-Egem"
+git clone https://github.com/TeamEGEM/go-egem.git
+cd go-egem && make egem
+cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
 echo "Installing node and pm2"
+cd ~
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs && sudo npm install -g pm2
 
-echo "Cloning go-egem Repo"
-sleep 5
-git clone https://github.com/TeamEGEM/go-egem.git
-
 echo "Cloning EGEM Net-Intelligence"
-sleep 5
 git clone https://github.com/TeamEGEM/egem-net-intelligence-api.git
 
-echo "Step 1 complete."
-echo "Run the following command to complete installation: source setup.sh; step2"
-}
-
 #source setup.sh; step2
-function step2()
-{
-        cd ~/go-egem && make egem
-cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
 echo -n "What woud you like to name your instance? (Example: TeamEGEM Node East Coast USA)"
 read INSTANCE_NAME
@@ -63,11 +75,16 @@ echo "This is the tricky part need to wait for chain to sync b4 connecting to th
 echo "Go get some food and come back in 5 min"
 echo "A more efficient way will eventually be implemented"
 
-sleep 300
 
 cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
 
 echo "Done your node should be listed on https://network.egem.io"
-}
+echo '
+
+    _  _   _        _  __                    
+  _| || |_| |_ _ __(_)/ _| ___  _ __ ___ ___ 
+ |_  ..  _| __| '__| | |_ / _ \| '__/ __/ _ \
+ |_      _| |_| |  | |  _| (_) | | | (_|  __/
+   |_||_|  \__|_|  |_|_|  \___/|_|  \___\___|'                                         
 
