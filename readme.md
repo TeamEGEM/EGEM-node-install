@@ -1,5 +1,5 @@
 # ![Ethergem](https://github.com/TeamEGEM/meta/blob/master/images/140x140.png)
-#Install Egem Node
+# Install Egem Node
 This script is to install a Ethergem node on your own vps.
 It has been testing on a $5 [Vultr VPS](https://www.vultr.com/?ref=7307426).
 
