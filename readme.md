@@ -1,3 +1,5 @@
+# ![Ethergem](https://github.com/TeamEGEM/meta/blob/master/images/140x140.png)
+#Install Egem Node
 This script is to install a Ethergem node on your own vps.
 It has been testing on a $5 [Vultr VPS](https://www.vultr.com/?ref=7307426).
 
@@ -26,7 +28,7 @@ If all went well when you visit the page you should see your newly created node 
 *** Note after setup if you notice that your node is red it could be due to not being fully sysnced with the current block height. Give it a few min to catch up and you should be good to go.
 If you have any trouble feel free to ask for help on the Official Egem discord. 
 
-To update go-egem
+# To update go-egem
 ```
 cd go-egem
 make clean
@@ -34,7 +36,7 @@ git pull
 make all
 ```
 
-To add your new node to the bootnode list.
+# To add your new node to the bootnode list.
 ```screen -ls
 screen -r go-egem
 ctrl+c to kill
