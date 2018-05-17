@@ -40,6 +40,21 @@ apt install screen
 echo "Installing git"
 apt install git -y
 
+echo "Intalling fail2ban"
+sudo apt install fail2ban
+
+echo "Installing Firewall"
+sudo apt install ufw -y
+ufw default allow outgoing
+ufw default deny incoming
+ufw allow ssh/tcp
+ufw limit ssh/tcp
+ufw allow 8545/tcp
+ufw allow 30666/tcp
+ufw allow 30661/tcp
+ufw logging on
+ufw --force enable
+
 echo "Install go-lang"
 sudo apt-get install golang-1.10 -y
 sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
@@ -74,17 +89,17 @@ sed "s/'/\"/g" ~/egem-net-intelligence-api/app.json
 echo "This is the tricky part need to wait for chain to sync b4 connecting to the the network page"
 echo "Go get some food and come back in 5 min"
 echo "A more efficient way will eventually be implemented"
-
+sleep 300
 
 cd ~/egem-net-intelligence-api && sudo npm install
 pm2 start app.json
 
 echo "Done your node should be listed on https://network.egem.io"
 echo '
-
-    _  _   _        _  __                    
-  _| || |_| |_ _ __(_)/ _| ___  _ __ ___ ___ 
- |_  ..  _| __| '__| | |_ / _ \| '__/ __/ _ \
- |_      _| |_| |  | |  _| (_) | | | (_|  __/
-   |_||_|  \__|_|  |_|_|  \___/|_|  \___\___|'                                         
-
+ ______   ______     __     ______   ______     ______     ______     ______    
+/\__  _\ /\  == \   /\ \   /\  ___\ /\  __ \   /\  == \   /\  ___\   /\  ___\   
+\/_/\ \/ \ \  __<   \ \ \  \ \  __\ \ \ \/\ \  \ \  __<   \ \ \____  \ \  __\   
+   \ \_\  \ \_\ \_\  \ \_\  \ \_\    \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\ 
+    \/_/   \/_/ /_/   \/_/   \/_/     \/_____/   \/_/ /_/   \/_____/   \/_____/ 
+    
+    '
