@@ -12,16 +12,7 @@ Ubuntu 16.04 LTS
 bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/egemnode.sh)"
 ```
 
-Install without Swap
-```
-bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
-```
-Install with Swap
-```
-bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/createswap.sh)" && bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
-```
-
-During the process you will be promted to type in some details for your node.
+During the process you will be prompted to type in some details for your node.
 
 Node Name and Contact Details.
 
