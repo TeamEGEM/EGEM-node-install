@@ -7,6 +7,11 @@ Requirements
 
 Ubuntu 16.04 LTS
 
+## Egem Node Installer
+```
+bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/egemnode.sh)"
+```
+
 Install without Swap
 ```
 bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
