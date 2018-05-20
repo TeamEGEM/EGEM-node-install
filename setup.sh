@@ -90,8 +90,9 @@ sed -i '18s/.*/      "CONTACT_DETAILS" : '"'$details'"',/' ~/egem-net-intelligen
 sed "s/'/\"/g" ~/egem-net-intelligence-api/app.json
 
 echo "This is the tricky part need to wait for chain to sync b4 connecting to the the network page"
-echo "Go get some food and come back in 5 min"
-echo "A more efficient way will eventually be implemented"
+echo "While waiting, go post on the ANN https://bitcointalk.org/index.php?topic=3167940.0"
+echo "or https://www.reddit.com/r/egem/"
+echo " "
 sleep 300
 
 cd ~/egem-net-intelligence-api && sudo npm install
