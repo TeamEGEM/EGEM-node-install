@@ -40,6 +40,9 @@ apt install screen
 echo "Installing git"
 apt install git -y
 
+echo "Installing curl"
+apt install curl -y
+
 echo "Intalling fail2ban"
 sudo apt install fail2ban
 
