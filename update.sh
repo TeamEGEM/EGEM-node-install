@@ -1,5 +1,6 @@
 #!/bin/bash
 
+pkill screen
 cd ~/go-egem
 make clean
 git pull
