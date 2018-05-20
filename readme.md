@@ -1,22 +1,18 @@
 # ![Ethergem](https://github.com/TeamEGEM/meta/blob/master/images/140x140.png)
 # Install Egem Node
+https://egem.io/
+
 This script is to install a Ethergem node on your own vps.
 It has been testing on a $5 [Vultr VPS](https://www.vultr.com/?ref=7307426).
 
-Requirements
+Requirements: Ubuntu 16.04 LTS
 
-Ubuntu 16.04 LTS
-
-Install without Swap
+## Egem Node Installer
 ```
-bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
-```
-Install with Swap
-```
-bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/createswap.sh)" && bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/setup.sh)"
+bash -c "$(wget -O - https://raw.githubusercontent.com/buzzkillb/EGEM-node-install/master/egemnode.sh)"
 ```
 
-During the process you will be promted to type in some details for your node.
+During the process you will be prompted to type in some details for your node.
 
 Node Name and Contact Details.
 
