@@ -49,7 +49,7 @@ So it should look something like this when done:
 
 submit pull request
 ```
-cd ~/live-net/egem/static-nodes.json
+cd ~/live-net/egem/
 wget https://raw.githubusercontent.com/TeamEGEM/EGEM-Bootnodes/master/static-nodes.json
 ```
 then run
