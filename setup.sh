@@ -64,7 +64,7 @@ sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
 
 echo "Clone and Compile Go-Egem"
 git clone https://github.com/TeamEGEM/go-egem.git
-mkdir /root//live-net/egem
+mkdir /root/live-net/egem/
 cd ~/live-net/egem/
 wget https://raw.githubusercontent.com/TeamEGEM/EGEM-Bootnodes/master/static-nodes.json
 cd ~/go-egem && make egem
