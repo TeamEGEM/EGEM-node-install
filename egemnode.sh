@@ -7,7 +7,7 @@ do
   echo "=========================="
   echo "Enter 1 to Install Egem Node with Swap File: "
   echo "Enter 2 to Install Egem Node without Swap File: "
-  echo "Enter 3 to Updated Egem Node: "
+  echo "Enter 3 to Update Egem Node: "
   echo "Enter q to exit this menu: "
   echo -e "\n"
   echo -e "Enter your selection \c"
