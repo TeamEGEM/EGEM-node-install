@@ -64,7 +64,10 @@ sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
 
 echo "Clone and Compile Go-Egem"
 git clone https://github.com/TeamEGEM/go-egem.git
-cd go-egem && make egem
+mkdir /root//live-net/egem
+cd ~/live-net/egem/
+wget https://raw.githubusercontent.com/TeamEGEM/EGEM-Bootnodes/master/static-nodes.json
+cd ~/go-egem && make egem
 cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
 
 echo "Installing node and pm2"
