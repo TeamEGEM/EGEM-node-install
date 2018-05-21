@@ -59,8 +59,8 @@ ufw logging on
 ufw --force enable
 
 echo "Install go-lang"
-sudo apt-get install golang-1.6 -y
-sudo ln /usr/lib/go-1.6/bin/go /usr/bin/go
+sudo apt-get install golang-1.10 -y
+sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
 
 echo "Clone and Compile Go-Egem"
 git clone https://github.com/TeamEGEM/go-egem.git
