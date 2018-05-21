@@ -35,7 +35,7 @@ echo "Installing build-essential"
 apt-get install -y build-essential
 
 echo "Intalling screen"
-apt install screen
+apt install screen -y
 
 echo "Installing git"
 apt install git -y
@@ -44,7 +44,7 @@ echo "Installing curl"
 apt install curl -y
 
 echo "Intalling fail2ban"
-sudo apt install fail2ban
+sudo apt install fail2ban -y
 
 echo "Installing Firewall"
 sudo apt install ufw -y
@@ -64,7 +64,7 @@ sudo ln /usr/lib/go-1.10/bin/go /usr/bin/go
 
 echo "Clone and Compile Go-Egem"
 git clone https://github.com/TeamEGEM/go-egem.git
-mkdir /root/live-net/egem/
+mkdir -p /root/live-net/egem/
 cd ~/live-net/egem/
 wget https://raw.githubusercontent.com/TeamEGEM/EGEM-Bootnodes/master/static-nodes.json
 cd ~/go-egem && make egem
