@@ -68,7 +68,7 @@ mkdir -p /root/live-net/egem/
 cd ~/live-net/egem/
 wget https://raw.githubusercontent.com/TeamEGEM/EGEM-Bootnodes/master/static-nodes.json
 cd ~/go-egem && make egem
-cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --rpc
+cd ~/go-egem && screen -dmS go-egem /root/go-egem/build/bin/egem --datadir ~/live-net/ --maxpeers 100 --rpc
 
 echo "Installing node and pm2"
 cd ~
