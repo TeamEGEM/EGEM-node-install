@@ -3,3 +3,5 @@
 https://egem.io/
 
 Node install being remade new link coming!
+
+https://git.egem.io/team/egem-quarrysetup
